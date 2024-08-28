@@ -90,12 +90,12 @@ async def stats(ctx):
 
 async def start(ctx):
     buttons = ButtonMaker()
-    buttons.ubutton("Repo", "https://www.github.com/anasty17/mirror-leech-telegram-bot")
-    buttons.ubutton("Owner", "https://t.me/anas_tayyar")
+    buttons.ubutton("Repo", "https://switch.click/c/balapriyanhelpcommunity")
+    buttons.ubutton("Owner", "https://switch.click/u/balapriyanb")
     reply_markup = buttons.build_menu(2)
     if await CustomFilters.authorized(ctx):
         start_string = f"""
-This bot can mirror all your links|files|torrents to Google Drive or any rclone cloud or to telegram.
+This bot can mirror all your links|files|torrents to Google Drive or any rclone cloud or to Switch.
 Type /{BotCommands.HelpCommand} to get a list of available commands
 """
         await sendMessage(ctx.event.message, start_string, reply_markup)
