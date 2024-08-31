@@ -136,11 +136,14 @@ def speed_string_to_bytes(size_text: str):
 
 
 def get_progress_bar_string(pct):
-    pct = float(pct.strip("%"))
+    pct = float(str(pct).strip('%'))
     p = min(max(pct, 0), 100)
     cFull = int(p // 8)
-    p_str = "■" * cFull
-    p_str += "□" * (12 - cFull)
+    cPart = int(p % 8 - 1)
+    p_str = '■' * cFull
+    if cPart >= 0:
+        p_str += ['▤', '▥', '▦', '▧', '▨', '▩', '■'][cPart]
+    p_str += '□' * (12 - cFull)
     return f"[{p_str}]"
 
 
